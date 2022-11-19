@@ -20,10 +20,13 @@ for i in (range(orLen)) :
 		del files[orLen - 1 - i]
 
 for i in range(len(files)) :
-	orName = files[i].replace(".m4a", '')
+	for j in (range(recExts)) :
+		orName = files[i].replace(recExts[j], '')
 	fullFileName = files[i]
 	fileName = files[i].split('_');
-	dateTime = fileName[len(fileName)-1].replace(".m4a", '');
+	dateTime = fileName[len(fileName)-1].replace(recExts[0], '')
+	for j in (range(recExts)) :
+		dateTime = dateTime.replace(recExts[j], '')
 	if len(dateTime) == 14 :
 		newName = dateTime[0:4] + '_' + dateTime[4:6] + '_' + dateTime[6:8] + '_' + dateTime[8:10] + '_' + dateTime[10:12] + '_' + dateTime[12:14] + '_'
 	else :
