@@ -20,12 +20,12 @@ for i in (range(orLen)) :
 		del files[orLen - 1 - i]
 
 for i in range(len(files)) :
-	for j in (range(recExts)) :
+	for j in range(len(recExts)) :
 		orName = files[i].replace(recExts[j], '')
 	fullFileName = files[i]
 	fileName = files[i].split('_');
 	dateTime = fileName[len(fileName)-1].replace(recExts[0], '')
-	for j in (range(recExts)) :
+	for j in range(len(recExts)) :
 		dateTime = dateTime.replace(recExts[j], '')
 	if len(dateTime) == 14 :
 		newName = dateTime[0:4] + '_' + dateTime[4:6] + '_' + dateTime[6:8] + '_' + dateTime[8:10] + '_' + dateTime[10:12] + '_' + dateTime[12:14] + '_'
